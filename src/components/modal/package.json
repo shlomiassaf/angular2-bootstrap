@@ -1,0 +1,18 @@
+{
+  "name": "@angular2-bootstrap/modal",
+  "version": "2.0.0-alpha.2",
+  "main": "./modal.js",
+  "typings": "./modal.d.ts",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "components",
+    "modal",
+    "dialog"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "angular2": "^2.0.0-beta.15",
+    "@angular2-bootstrap/core": "2.0.0-alpha.2"
+  }
+}

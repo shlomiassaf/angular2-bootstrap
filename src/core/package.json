@@ -1,0 +1,15 @@
+{
+  "name": "@angular2-bootstrap/core",
+  "version": "2.0.0-alpha.2",
+  "main": "./core.js",
+  "typings": "./core.d.ts",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "components"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "angular2": "^2.0.0-beta.15"
+  }
+}
