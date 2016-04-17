@@ -1,0 +1,20 @@
+{
+  "name": "@angular2-bootstrap/button",
+  "version": "2.0.0-alpha.2",
+  "main": "./button.js",
+  "typings": "./button.d.ts",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "components",
+    "button",
+    "toggle",
+    "checkbox",
+    "radio"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "angular2": "^2.0.0-beta.15",
+    "@angular2-bootstrap/core": "2.0.0-alpha.2"
+  }
+}

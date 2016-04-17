@@ -1,0 +1,44 @@
+<h4>Basic Usage</h4>
+<p>btn-toggle can be used anywhere a normal checkbox would be used, and in the same way.</p>
+<label class="btn btn-primary" name="group1" bsAsRadio="Left" (change)="simpleRadioModal = $event.value">Left</label>
+<label class="btn btn-primary" name="group1" bsAsRadio="Middle" (change)="simpleRadioModal = $event.value">Middle</label>
+<label class="btn btn-primary" name="group1" bsAsRadio="Right" (change)="simpleRadioModal = $event.value">Right</label>
+<pre class="card card-block card-header">
+  Model Data: {{simpleRadioModal | json}}
+</pre>
+
+
+<div class="btn-group">
+  <label class="btn btn-primary" name="group2" [(ngModel)]="groupRadioNgModel" bsAsRadio="Left">Left</label>
+  <label class="btn btn-primary" name="group2" [(ngModel)]="groupRadioNgModel" bsAsRadio="Middle">Middle</label>
+  <label class="btn btn-primary" name="group2" [(ngModel)]="groupRadioNgModel" bsAsRadio="Right">Right</label>
+</div>
+<pre class="card card-block card-header">
+  Model Data: {{groupRadioNgModel | json}}
+</pre>
+
+
+<div class="btn-group" [(ngModel)]="groupRadioModel" bsAsRadioGroup>
+  <label class="btn btn-primary" bsAsRadio="Left">Left</label>
+  <label class="btn btn-primary" bsAsRadio="Middle">Middle</label>
+  <label class="btn btn-primary" bsAsRadio="Right">Right</label>
+</div>
+<pre class="card card-block card-header">
+  Model Data: {{groupRadioModel | json}}
+</pre>
+
+
+<div class="btn-group" [(ngModel)]="dynamicRadioModel" bsAsRadioGroup>
+  <label class="btn btn-primary" *ngFor="#d of dynamicOptions" name="dynamic" [bsAsRadio]="d.value" [disabled]="d.disabled">
+    {{d.text}}
+  </label>
+</div>
+<pre class="card card-block card-header">
+  Model Data: {{dynamicRadioModel | json}}
+</pre>
+
+<h4>Usage within Forms</h4>
+<p>In addition to supporting native checkbox functionality, btn-toggle also supports [(ngModel)] and ngControl for use within forms.</p>
+
+
+

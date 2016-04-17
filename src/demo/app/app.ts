@@ -1,9 +1,8 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS} from 'angular2/common';
+import {ComponentShowcase} from './componentShowcase/componentShowcase';
 
-import {DemoPage} from './demoPage/demoPage';
-import {CustomizeWizard} from './customizeWizard/customizeWizard';
 /*
  * App Component
  * Top Level Component
@@ -27,8 +26,7 @@ import {CustomizeWizard} from './customizeWizard/customizeWizard';
   `
 })
 @RouteConfig([
-    { path: '/', component: DemoPage, name: 'Demo' },
-    { path: '/customizeModals', component: CustomizeWizard, name: 'CustomizeModals' }
+    { path: '/', component: ComponentShowcase, name: 'Showcase' }
 ])
 export class App {
     constructor() {}

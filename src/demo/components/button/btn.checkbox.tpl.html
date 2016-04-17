@@ -1,0 +1,28 @@
+<h4>Basic Usage</h4>
+<p>btn-toggle can be used anywhere a normal checkbox would be used, and in the same way.</p>
+<button bsAsCheckbox
+        class="btn btn-primary"
+        [disabled]="state.isDisabled"
+        [checked]="state.isChecked"
+        (change)="state.isChecked  = $event">Toggle Button</button>
+
+
+<h4>Usage within Forms</h4>
+<p>In addition to supporting native checkbox functionality, btn-toggle also supports [(ngModel)] and ngControl for use within forms.</p>
+<button bsAsCheckbox
+        class="btn btn-primary"
+        [(ngModel)]="state.isDisabled">Disable Button</button>
+
+<pre class="card card-block card-header">
+  Model Data: {{state | json}}
+</pre>
+
+<div class="btn-group">
+  <label bsAsCheckbox class="btn btn-primary" [(ngModel)]="groupCheckbox.left">Left</label>
+  <label bsAsCheckbox class="btn btn-primary" [(ngModel)]="groupCheckbox.middle">Middle</label>
+  <label bsAsCheckbox class="btn btn-primary" [(ngModel)]="groupCheckbox.right">Right</label>
+</div>
+
+<pre class="card card-block card-header">
+  Model Data: {{groupCheckbox | json}}
+</pre>
