@@ -1,16 +1,13 @@
 {
-  "name": "@angular2-bootstrap/button",
+  "name": "@angular2-bootstrap/alert",
   "version": "2.0.0-alpha.2",
-  "main": "./button.js",
-  "typings": "./button.d.ts",
+  "main": "./alert.js",
+  "typings": "./alert.d.ts",
   "keywords": [
     "angular",
     "bootstrap",
     "components",
-    "button",
-    "toggle",
-    "checkbox",
-    "radio"
+    "alert"
   ],
   "license": "MIT",
   "peerDependencies": {

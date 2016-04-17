@@ -1,0 +1,13 @@
+<h4>Basic Usage</h4>
+
+<button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>
+
+<h4>Time based Usage</h4>
+<alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+
+
+<h4>Dynamic usage</h4>
+<alert *ngFor="#alert of alerts;#i = index" [type]="alert.type" closeable="true" (close)="closeAlert(i)">
+  {{ alert?.msg }}
+</alert>
+
