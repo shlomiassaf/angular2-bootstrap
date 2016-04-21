@@ -5,7 +5,6 @@ import {
     Output,
     ElementRef,
     Renderer,
-    AppViewManager,
     ViewChild,
     AfterViewInit,
     ViewEncapsulation,
@@ -19,7 +18,7 @@ export type ALERT_TYPE = 'success' | 'info' | 'warning' | 'danger';
 
 @Component({
     selector: 'alert',
-    templateUrl: '/components/alert/alert.tpl.html',
+    templateUrl: 'components/alert/alert.tpl.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -53,13 +52,7 @@ export class Alert implements AfterViewInit{
 
     @ViewChild('alert') private alertRef: ElementRef;
 
-    private _closed: boolean;
-
     constructor(private elementRef: ElementRef, private renderer: Renderer) {}
-
-    get closed(): boolean {
-        return this._closed;
-    }
 
     ngAfterViewInit() {
         let t = this.customType || `alert-${this.type}`;
@@ -69,12 +62,15 @@ export class Alert implements AfterViewInit{
 
         this.dismissOnTimeout > 0 && setTimeout(() => this.dismiss(), this.dismissOnTimeout);
     }
-    
+
     public dismiss(): void {
         this.close.emit(this);
 
         // TODO, remove in a better way, also support animation.
-        this.renderer.invokeElementMethod(this.elementRef.nativeElement, 'removeChild',
-            [this.alertRef.nativeElement]);
+        // need to find a way to self destruct a component created from template and not DLC.
+        this.renderer.detachView([this.elementRef.nativeElement]);
+        
+        // this.renderer.invokeElementMethod(this.elementRef.nativeElement, 'removeChild',
+        //     [this.alertRef.nativeElement]);
     }
 }
